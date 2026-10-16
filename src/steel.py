@@ -195,29 +195,45 @@ def fe_pipeline(model, base_cols, use_count=True, sampler="passthrough", scale=F
 
 
 # ---------------- 최종 모델 ----------------
-FINAL_PARAMS = {   # 03 노트북 튜닝 결과 (36개 피처)
+FINAL_PARAMS = {   # 최종 모델: plate_defect_count 제외 35개 피처로 재튜닝 (04 노트북)
+    "ExtraTrees": {"sampler": "smotenc", "model__class_weight": "balanced_subsample", "model__max_depth": 15,
+                   "model__max_features": 0.5, "model__min_samples_leaf": 1, "model__n_estimators": 699},
+    "GBM": {"model__alpha": 1, "model__estimator__learning_rate": 0.17042680321970374, "model__estimator__max_depth": 4,
+            "model__estimator__max_features": 0.5, "model__estimator__min_samples_leaf": 5,
+            "model__estimator__n_estimators": 243, "model__estimator__subsample": 0.9209722111217702},
+}
+PARAMS_WITH_COUNT = {   # 비교용: plate_defect_count 포함 36개 피처 튜닝 결과 (03 노트북)
     "ExtraTrees": {"model__class_weight": "balanced", "model__max_depth": 15, "model__max_features": 0.7,
                    "model__min_samples_leaf": 1, "model__n_estimators": 438},
-    "RandomForest": {"model__class_weight": None, "model__max_depth": None, "model__max_features": 0.3,
-                     "model__min_samples_leaf": 1, "model__n_estimators": 483},
     "GBM": {"model__alpha": 1, "model__estimator__learning_rate": 0.08793919399591556, "model__estimator__max_depth": 4,
             "model__estimator__max_features": 0.5, "model__estimator__min_samples_leaf": 5,
             "model__estimator__n_estimators": 240, "model__estimator__subsample": 0.9079017872741743},
 }
 
 
-def member_models(base_cols, params=None, use_count=True):
-    """Soft Voting 구성 모델 3개 (샘플러 없음, 클래스 가중치는 파라미터로 지정)."""
-    p = params or FINAL_PARAMS
+def _sampler(value, base_cols, use_count):
+    """파라미터의 sampler 값 → 객체 ("smotenc" 문자열 또는 튜닝 결과의 SMOTENC 객체 모두 허용)."""
+    if isinstance(value, str) and value == "smotenc":
+        from imblearn.over_sampling import SMOTENC
+        feats = fe_features(base_cols, use_count)
+        return SMOTENC(categorical_features=discrete_idx(feats), sampling_strategy=Oversample(1), k_neighbors=5, random_state=RS)
+    return value
+
+
+def member_models(base_cols, params=None, use_count=False):
+    """Soft Voting 구성 모델 2개."""
+    p = {n: dict(v) for n, v in (params or FINAL_PARAMS).items()}
+    for v in p.values():
+        if "sampler" in v:
+            v["sampler"] = _sampler(v["sampler"], base_cols, use_count)
     return [
         ("extratrees", fe_pipeline(ExtraTreesClassifier(random_state=RS, n_jobs=1), base_cols, use_count).set_params(**p["ExtraTrees"])),
-        ("rf", fe_pipeline(RandomForestClassifier(random_state=RS, n_jobs=1), base_cols, use_count).set_params(**p["RandomForest"])),
         ("gbm", fe_pipeline(BalancedWeightClassifier(GradientBoostingClassifier(random_state=RS)), base_cols, use_count).set_params(**p["GBM"])),
     ]
 
 
-def final_model(base_cols, params=None, use_count=True):
-    """최종 모델: ExtraTrees + RandomForest + GBM Soft Voting (확률 평균)."""
+def final_model(base_cols, params=None, use_count=False):
+    """최종 모델: ExtraTrees + GBM Soft Voting (확률 평균), 기본은 plate_defect_count 제외 35개 피처."""
     return VotingClassifier(member_models(base_cols, params, use_count), voting="soft")
 
 

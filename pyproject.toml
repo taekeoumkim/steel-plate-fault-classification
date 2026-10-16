@@ -1,0 +1,24 @@
+[project]
+name = "steel-plate-fault-classification"
+version = "0.1.0"
+description = "Steel plate surface fault classification (7 classes) with tree ensembles"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3",
+    "pandas>=2.2",
+    "scikit-learn>=1.8",
+    "imbalanced-learn>=0.14",
+    "xgboost>=3.0",
+    "lightgbm>=4.6",
+    "scipy>=1.15",
+    "matplotlib>=3.9",
+    "joblib>=1.5",
+    "ipykernel>=6.29",
+]
+
+[tool.uv]
+package = false
+
+[tool.pyright]
+extraPaths = ["src"]   # VS Code(Pylance)가 노트북의 src 모듈 import를 인식하도록
