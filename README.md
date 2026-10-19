@@ -104,6 +104,10 @@
 │   ├── 03_features_tuning_ensemble.ipynb  # 파생변수, 튜닝, Soft Voting 조합, 반복 CV
 │   ├── 04_generalization.ipynb            # 그룹 교차검증, plate_defect_count 제외 재튜닝 → 최종 피처 결정
 │   └── 05_final_model.ipynb               # 최종 모델 CV·과적합 점검·Test 평가·저장
+├── dashboard/
+│   ├── app.py                      # Streamlit 대시보드
+│   ├── build_data.py               # 대시보드용 결과 파일 생성
+│   └── data/                       # 대시보드가 읽는 결과 (CSV·JSON)
 ├── figures/                        # 결과 그림
 └── results/cache/                  # 튜닝·CV 계산 캐시 (git 제외)
 ```
@@ -118,6 +122,27 @@ uv sync      # .venv 생성 + 패키지 설치 → VS Code에서 노트북 커�
 
 노트북은 01부터 순서대로 실행합니다. 05는 단독으로 실행할 수 있습니다(최종 파라미터는 `src/steel.py`에 고정).
 튜닝·CV 결과는 `results/cache/`에 저장되어 두 번째 실행부터는 빠르게 끝납니다.
+
+## 대시보드 (Streamlit)
+
+데이터 특성, 모델별 평가 지표, 불균형 처리 전후, 최종 모델 결과를 한 화면에서 확인할 수 있습니다.
+
+```bash
+uv run streamlit run dashboard/app.py      # 브라우저에서 http://localhost:8501
+```
+
+| 탭 | 내용 |
+|---|---|
+| 데이터 | 클래스 분포(Train/Test), 유형별 변수 분포, 생산 조건 구조 |
+| 모델 비교 | 단계별 모델의 5-fold 지표(Macro F1·Accuracy·Precision·Recall), Soft Voting 조합, 무작위 vs 그룹 분할 |
+| 불균형 처리 | 처리 방법 × 모델 Macro F1, 처리 전후 유형별 Recall·Precision·F1 |
+| 최종 모델 | Confusion Matrix, 유형별 지표, 변수 중요도, 학습·손실 곡선 |
+
+대시보드는 `dashboard/data/`의 결과 파일을 읽습니다. 노트북을 다시 실행해 결과가 바뀌었다면 아래로 다시 만듭니다.
+
+```bash
+uv run python dashboard/build_data.py      # results/cache/와 models/final_model.pkl 필요
+```
 
 ## 배운 점
 

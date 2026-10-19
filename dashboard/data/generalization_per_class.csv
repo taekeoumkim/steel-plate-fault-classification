@@ -1,0 +1,43 @@
+model,split,class,f1
+Baseline XGBoost (26),random 5×3,Other_Faults,0.7508305647840532
+Baseline XGBoost (26),random 5×3,Bumps,0.6739130434782609
+Baseline XGBoost (26),random 5×3,K_Scratch,0.9695675387079552
+Baseline XGBoost (26),random 5×3,Z_Scratch,0.9402654867256637
+Baseline XGBoost (26),random 5×3,Pastry,0.6151645207439199
+Baseline XGBoost (26),random 5×3,Stains,0.9398280802292264
+Baseline XGBoost (26),random 5×3,Dirtiness,0.819672131147541
+Baseline XGBoost (26),group 5×3,Other_Faults,0.6743498817966903
+Baseline XGBoost (26),group 5×3,Bumps,0.6435233160621762
+Baseline XGBoost (26),group 5×3,K_Scratch,0.9025352112676056
+Baseline XGBoost (26),group 5×3,Z_Scratch,0.8548199767711963
+Baseline XGBoost (26),group 5×3,Pastry,0.5473411154345007
+Baseline XGBoost (26),group 5×3,Stains,0.9482758620689655
+Baseline XGBoost (26),group 5×3,Dirtiness,0.7407407407407407
+"ET+GBM (36, count 포함)",random 5×3,Other_Faults,0.7628928898382668
+"ET+GBM (36, count 포함)",random 5×3,Bumps,0.699228791773779
+"ET+GBM (36, count 포함)",random 5×3,K_Scratch,0.9758971612212105
+"ET+GBM (36, count 포함)",random 5×3,Z_Scratch,0.9311111111111111
+"ET+GBM (36, count 포함)",random 5×3,Pastry,0.6831955922865014
+"ET+GBM (36, count 포함)",random 5×3,Stains,0.9476744186046512
+"ET+GBM (36, count 포함)",random 5×3,Dirtiness,0.8774703557312253
+"ET+GBM (36, count 포함)",group 5×3,Other_Faults,0.692074012703673
+"ET+GBM (36, count 포함)",group 5×3,Bumps,0.6475279106858054
+"ET+GBM (36, count 포함)",group 5×3,K_Scratch,0.9087759815242494
+"ET+GBM (36, count 포함)",group 5×3,Z_Scratch,0.781127129750983
+"ET+GBM (36, count 포함)",group 5×3,Pastry,0.5888738127544098
+"ET+GBM (36, count 포함)",group 5×3,Stains,0.9387755102040817
+"ET+GBM (36, count 포함)",group 5×3,Dirtiness,0.8
+"ET+GBM (35, count 제외)",random 5×3,Other_Faults,0.7589006870705809
+"ET+GBM (35, count 제외)",random 5×3,Bumps,0.7053526763381691
+"ET+GBM (35, count 제외)",random 5×3,K_Scratch,0.9780396357793251
+"ET+GBM (35, count 제외)",random 5×3,Z_Scratch,0.9292035398230089
+"ET+GBM (35, count 제외)",random 5×3,Pastry,0.6648648648648648
+"ET+GBM (35, count 제외)",random 5×3,Stains,0.9394812680115274
+"ET+GBM (35, count 제외)",random 5×3,Dirtiness,0.8853754940711462
+"ET+GBM (35, count 제외)",group 5×3,Other_Faults,0.6877688998156115
+"ET+GBM (35, count 제외)",group 5×3,Bumps,0.6711996114618747
+"ET+GBM (35, count 제외)",group 5×3,K_Scratch,0.9181253529079616
+"ET+GBM (35, count 제외)",group 5×3,Z_Scratch,0.8756998880179171
+"ET+GBM (35, count 제외)",group 5×3,Pastry,0.5935828877005348
+"ET+GBM (35, count 제외)",group 5×3,Stains,0.9446064139941691
+"ET+GBM (35, count 제외)",group 5×3,Dirtiness,0.7868852459016393

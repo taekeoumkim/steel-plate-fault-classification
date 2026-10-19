@@ -1,0 +1,91 @@
+model,split,fold,macro_f1
+Baseline XGBoost (26),random 5×3,0,0.8111191670267459
+Baseline XGBoost (26),random 5×3,1,0.8153246244738338
+Baseline XGBoost (26),random 5×3,2,0.852022193695926
+Baseline XGBoost (26),random 5×3,3,0.7566104940231051
+Baseline XGBoost (26),random 5×3,4,0.819638301722474
+Baseline XGBoost (26),random 5×3,5,0.793370529374234
+Baseline XGBoost (26),random 5×3,6,0.8278853619746941
+Baseline XGBoost (26),random 5×3,7,0.826671273317774
+Baseline XGBoost (26),random 5×3,8,0.7867843973752408
+Baseline XGBoost (26),random 5×3,9,0.8398184881587208
+Baseline XGBoost (26),random 5×3,10,0.8286998026731613
+Baseline XGBoost (26),random 5×3,11,0.8123987868009734
+Baseline XGBoost (26),random 5×3,12,0.8032246796048088
+Baseline XGBoost (26),random 5×3,13,0.8319324935230832
+Baseline XGBoost (26),random 5×3,14,0.8095309860207819
+Baseline XGBoost (26),group 5×3,0,0.7598982409948867
+Baseline XGBoost (26),group 5×3,1,0.7656651622895757
+Baseline XGBoost (26),group 5×3,2,0.6913104849536963
+Baseline XGBoost (26),group 5×3,3,0.746222050464039
+Baseline XGBoost (26),group 5×3,4,0.6639957352029598
+Baseline XGBoost (26),group 5×3,5,0.758670037993569
+Baseline XGBoost (26),group 5×3,6,0.6727550224215547
+Baseline XGBoost (26),group 5×3,7,0.7126182780004443
+Baseline XGBoost (26),group 5×3,8,0.7246037258602511
+Baseline XGBoost (26),group 5×3,9,0.6461590736721762
+Baseline XGBoost (26),group 5×3,10,0.7555856771136212
+Baseline XGBoost (26),group 5×3,11,0.788348351114454
+Baseline XGBoost (26),group 5×3,12,0.7136842497619558
+Baseline XGBoost (26),group 5×3,13,0.7334369666997906
+Baseline XGBoost (26),group 5×3,14,0.6632657655484696
+"ET+GBM (36, count 포함)",random 5×3,0,0.8358616323826887
+"ET+GBM (36, count 포함)",random 5×3,1,0.8313102523793107
+"ET+GBM (36, count 포함)",random 5×3,2,0.8648848759809
+"ET+GBM (36, count 포함)",random 5×3,3,0.8252013491737026
+"ET+GBM (36, count 포함)",random 5×3,4,0.8666710140190107
+"ET+GBM (36, count 포함)",random 5×3,5,0.7813681017863636
+"ET+GBM (36, count 포함)",random 5×3,6,0.8713445691253495
+"ET+GBM (36, count 포함)",random 5×3,7,0.8389985561257455
+"ET+GBM (36, count 포함)",random 5×3,8,0.8049832678188494
+"ET+GBM (36, count 포함)",random 5×3,9,0.8596854567200566
+"ET+GBM (36, count 포함)",random 5×3,10,0.8409026676617695
+"ET+GBM (36, count 포함)",random 5×3,11,0.8592543982347013
+"ET+GBM (36, count 포함)",random 5×3,12,0.8397639384059649
+"ET+GBM (36, count 포함)",random 5×3,13,0.8417805975135669
+"ET+GBM (36, count 포함)",random 5×3,14,0.8244848535237049
+"ET+GBM (36, count 포함)",group 5×3,0,0.6482388786412675
+"ET+GBM (36, count 포함)",group 5×3,1,0.7661283349261935
+"ET+GBM (36, count 포함)",group 5×3,2,0.7650023739224153
+"ET+GBM (36, count 포함)",group 5×3,3,0.7370569189846299
+"ET+GBM (36, count 포함)",group 5×3,4,0.6910653552716243
+"ET+GBM (36, count 포함)",group 5×3,5,0.6823154477229947
+"ET+GBM (36, count 포함)",group 5×3,6,0.7746174897504793
+"ET+GBM (36, count 포함)",group 5×3,7,0.7079172156662328
+"ET+GBM (36, count 포함)",group 5×3,8,0.7373718446272094
+"ET+GBM (36, count 포함)",group 5×3,9,0.6968803271930779
+"ET+GBM (36, count 포함)",group 5×3,10,0.6597279703292559
+"ET+GBM (36, count 포함)",group 5×3,11,0.7786939514063523
+"ET+GBM (36, count 포함)",group 5×3,12,0.7808700315841649
+"ET+GBM (36, count 포함)",group 5×3,13,0.6739590978388301
+"ET+GBM (36, count 포함)",group 5×3,14,0.6736508419833507
+"ET+GBM (35, count 제외)",random 5×3,0,0.8182185436471425
+"ET+GBM (35, count 제외)",random 5×3,1,0.8175296443208121
+"ET+GBM (35, count 제외)",random 5×3,2,0.8443714140258779
+"ET+GBM (35, count 제외)",random 5×3,3,0.8220181147531213
+"ET+GBM (35, count 제외)",random 5×3,4,0.8573339828581918
+"ET+GBM (35, count 제외)",random 5×3,5,0.7750253073857601
+"ET+GBM (35, count 제외)",random 5×3,6,0.871938820734845
+"ET+GBM (35, count 제외)",random 5×3,7,0.8499999329630025
+"ET+GBM (35, count 제외)",random 5×3,8,0.8168976431631664
+"ET+GBM (35, count 제외)",random 5×3,9,0.8481062664701027
+"ET+GBM (35, count 제외)",random 5×3,10,0.825013153971603
+"ET+GBM (35, count 제외)",random 5×3,11,0.867629348218374
+"ET+GBM (35, count 제외)",random 5×3,12,0.852398307162683
+"ET+GBM (35, count 제외)",random 5×3,13,0.8553715226647716
+"ET+GBM (35, count 제외)",random 5×3,14,0.8305081147763088
+"ET+GBM (35, count 제외)",group 5×3,0,0.7835511763593893
+"ET+GBM (35, count 제외)",group 5×3,1,0.7879342771468707
+"ET+GBM (35, count 제외)",group 5×3,2,0.7687533655988267
+"ET+GBM (35, count 제외)",group 5×3,3,0.7444479592039318
+"ET+GBM (35, count 제외)",group 5×3,4,0.7355482079331248
+"ET+GBM (35, count 제외)",group 5×3,5,0.8056074652926741
+"ET+GBM (35, count 제외)",group 5×3,6,0.8190385735633057
+"ET+GBM (35, count 제외)",group 5×3,7,0.7032366597577372
+"ET+GBM (35, count 제외)",group 5×3,8,0.7432517003479214
+"ET+GBM (35, count 제외)",group 5×3,9,0.673780786975117
+"ET+GBM (35, count 제외)",group 5×3,10,0.8082539213817441
+"ET+GBM (35, count 제외)",group 5×3,11,0.8050656160145271
+"ET+GBM (35, count 제외)",group 5×3,12,0.7803223004346979
+"ET+GBM (35, count 제외)",group 5×3,13,0.7344063499525684
+"ET+GBM (35, count 제외)",group 5×3,14,0.6647500419788426
